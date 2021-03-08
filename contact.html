@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" href="../website_project/css/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>CONTACT US FORM</title>
+    <style>
+        .wrapper {
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 85px;
+            padding-right: 100px;
+            padding-left: 100px;
+        }
+    </style>
+</head>
+<header>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">BrightStorm</label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
+            <li><a href="apply.html">APPLY NOW</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div class="wrapper">
+    <form action ="connection.php" method="POST" ValidateForm(this);>
+        <script type="text/javascript">
+            function ValidateForm(frm) {
+                if (frm.username.value == "") { alert('username is required.'); frm.username.focus(); return false; }
+                if (frm.EmailAddress.value == "") { alert('Email address is required.'); frm.EmailAddress.focus(); return false; }
+                if (frm.EmailAddress.value.indexOf("@") < 1 || frm.EmailAddress.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.EmailAddress.focus(); return false; }
+                if (frm.Comments.value == "") { alert('Please enter comments or questions.'); frm.Comments.focus(); return false; }
+                return true;
+            }
+        </script> 
+        <center><b>CONTACT US</b></center>
+		<table style="width:100%;max-width:550px;border:10px solid #595959; margin-left: auto;
+        margin-right: auto; background-color:#f2f2f2" cellpadding="8" cellspacing="8">
+		<tr>
+			
+		<td>NAME</td>
+		<td><input type="text" name="username" required></td>
+	</tr>
+	<tr>
+	<td>password :</td>
+	<td><input type="password" name="password" required></td>
+</tr>
+<tr>
+<td>GENDER :</td>
+<td><input type="radio" name="gender" value="m" required>Male
+<input type="radio" name="gender" value="f" required>Female
+</td>
+</tr>
+<tr>
+<td>Email</td>
+<td><input type="email" name="email" required></td>
+</tr>
+<tr>
+<td>phone no :</td>
+<td>
+<select name="phonecode" required>
+<option selected hidden value="">Select code</option>
+<option value="+92">+92</option>	
+<option value="966">966</option>
+<option value="979">979</option>
+<option value="973">973</option>
+<option value="972">972</option>
+<option value="974">974</option>
+
+</select>
+<input type="phone" name="phone" required>
+</td>
+</tr>
+<tr>
+<td><input type="submit" name="submit">	</td>
+</tr>
+</table>
+</form>
+    </div>
+    <footer class="footer">
+        <p> c 2020 all rights resesrved</p>
+    </footer>
+</body>
+
+</html>

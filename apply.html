@@ -1,0 +1,132 @@
+<!DOCTYPE html>  
+<html>  
+<head> 
+    <meta charset="utf-8">
+    <title>APPLY NOW</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" href="../website_project/css/styles.css">   
+<style>  
+body{  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: white;  
+}  
+.container {  
+    padding: 5px;  
+  background-color:#e0e0d2;  
+}  
+  
+input[type=text], input[type=password], textarea {  
+  width: 100%;  
+  padding: 15px;  
+  margin: 5px 0 22px 0;  
+  display: inline-block;  
+  border: none;  
+  background: #f1f1f1;  
+}  
+input[type=text]:focus, input[type=password]:focus {  
+  background-color: orange;  
+  outline: none;  
+}  
+ div {  
+            padding: 10px 0;  
+         }  
+hr {  
+  border: 1px solid black;  
+  margin-bottom: 25px;  
+}  
+.registerbtn {  
+  background-color: #4CAF50;  
+  color: white;  
+  padding: 16px 20px;  
+  margin: 8px 0;  
+  border: none;  
+  cursor: pointer;  
+  width: 100%;  
+  opacity: 0.9;  
+}  
+.registerbtn:hover {  
+  opacity: 1;  
+}  
+</style>  
+</head>  
+<body>
+     <header>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">BrightStorm</label>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a  href="courses.html">Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="apply.html">APPLY NOW</a></li>
+            </ul>
+        </nav>
+    </header>  
+<form action="register.php" method="POST" ValidateForm(this);>  
+  <script type="text/javascript">
+    function ValidateForm(frm) {
+        if (frm.username.value == "") { alert('username is required.'); frm.username.focus(); return false; }
+        if (frm.EmailAddress.value == "") { alert('Email address is required.'); frm.EmailAddress.focus(); return false; }
+        if (frm.EmailAddress.value.indexOf("@") < 1 || frm.EmailAddress.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.EmailAddress.focus(); return false; }
+        if (frm.Comments.value == "") { alert('Please enter comments or questions.'); frm.Comments.focus(); return false; }
+        return true;
+    }
+</script>
+  <div class="container">  
+  <center>  <h1>Registration Form</h1> </center>  
+  <hr>  
+  <label> Firstname </label>   
+<input type="text" name="firstname" placeholder= "firstname" size="15" required />     
+<label> Lastname: </label>    
+<input type="text" name="lastname" placeholder="lastname" size="15"required />   
+<div>  
+<label>
+    COURSES:  
+</label>   
+<select name="Course" required> 
+<option value="Course">Course</option>  
+<option value="C++">C++</option>  
+<option value="PYTHON">PYTHON</option>  
+<option value="JAVASCRIPT">JAVASCRIPT</option>  
+<option value="PHP">PHP</option>  
+<option value="HTML">HTML</option>  
+<option value="CSS">CSS</option>  
+</select>  
+</div>  
+<div>  
+<label>
+    GENDER     
+</label><br>  
+<input type="radio" value="Male" name="gender" checked > Male   
+<input type="radio" value="Female" name="gender"> Female   
+<input type="radio" value="Other" name="gender"> Other  
+  
+</div>  
+<label> PHONE #   
+</label>  
+<input type="text" name="countrycode" placeholder="Country Code"  value="+92" size="2"/>   
+<input type="text" name="phoneno" placeholder="phoneno." size="10"/ required>   
+Current Address :  
+<textarea cols="80" rows="5" placeholder="CurrentAddress" value="address" >  
+</textarea>  
+ <label for="emailaddress"><b>Email</b></label>  
+ <input type="text" placeholder="Enter Email" name="emailaddress" required>  
+  
+    <label for="psw"><b>Password</b></label>  
+    <input type="password" placeholder="Enter Password" name="password" required>  
+  
+    <label for="pswrepeat"><b>Re-type Password</b></label>  
+    <input type="password" placeholder="Retype Password" name="pswrepeat" required>  
+    <button type="submit" class="registerbtn">Register</button>    
+</form>
+<footer class="footer">
+        <p> c 2020 all rights resesrved</p>
+    </footer>  
+</body>  
+</html>
