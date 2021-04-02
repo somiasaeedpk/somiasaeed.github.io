@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  mysql-version-8:
+    image:  'mysql:8'
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - '3307:3306'
+    networks:
+      - docker-private-network
+    volumes:
+      - mysql8-data:/var/lib/mysql
+
+
+networks:
+  docker-private-network:
+    external: true
+volumes:
+  mysql8-data:
+    driver: local

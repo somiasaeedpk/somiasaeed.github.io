@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  mysql-latest-server:
+    image: 'mysql:latest'
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - '3306:3306'
+    volumes:
+      - 'mysql-data:/var/lib/mysql'
+    networks: 
+      - docker-private-network
+  phpmyadmin-latest:
+    image: 'phpmyadmin/phpmyadmin:latest'
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      - PMA_ARBITRARY=1 
+    networks: 
+      - docker-private-network
+volumes:
+  mysql-data:
+    driver: local
+networks:
+  docker-private-network:
+    external: true
